@@ -20,7 +20,7 @@ bern_files <-
   paste0("data-raw/bernie-ascii/", list.files("data-raw/bernie-ascii/"))
 
 bernie <- lapply(X = bern_files, FUN = feel_the_bern)
-names(bernie) <- c("point", "chair")
+names(bernie) <- c("chair", "point")
 colnames(bernie$point) <- c("You did it")
 colnames(bernie$chair) <- c("Not yet")
 
