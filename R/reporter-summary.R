@@ -90,10 +90,12 @@ SummaryReporter <- R6::R6Class("SummaryReporter",
       self$rule("DONE", line = 2)
       if (self$show_praise) {
         if (length(failures) == 0) {
-          self$cat_line(colourise(praise(), "success"))
+          print(praise())
+          #self$cat_line(praise(), "success")
         }
         if (length(failures) > 0) {
-          self$cat_line(colourise(encourage(), "error"))
+          print(encourage())
+          #self$cat_line(encourage(), "error")
         }
       }
     }

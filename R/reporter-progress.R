@@ -251,15 +251,17 @@ ProgressReporter <- R6::R6Class("ProgressReporter",
         self$rule("Terminated early", line = 2)
       }
 
-      if (!self$show_praise || runif(1) > 0.1) {
+      if (!self$show_praise) {
         return()
       }
 
       self$cat_line()
       if (self$n_fail == 0) {
-        self$cat_line(colourise(praise(), "success"))
+        print(praise())
+        #self$cat_line(colourise(praise(), "success"))
       } else {
-        self$cat_line(colourise(encourage(), "error"))
+        print(encourage())
+        #self$cat_line(colourise(encourage(), "error"))
       }
     },
 
