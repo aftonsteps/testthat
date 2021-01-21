@@ -11,8 +11,7 @@ feel_the_bern <- function(filepath) {
   x <- read.csv(filepath,
                 sep = "\t",
                 stringsAsFactors = FALSE,
-                header = FALSE) %>%
-    dplyr::select("Not yet" = V1)
+                header = FALSE)
 
   return(x)
 }
@@ -22,5 +21,7 @@ bern_files <-
 
 bernie <- lapply(X = bern_files, FUN = feel_the_bern)
 names(bernie) <- c("point", "chair")
+colnames(bernie$point) <- c("You did it")
+colnames(bernie$chair) <- c("Not yet")
 
 usethis::use_data(bernie, overwrite = TRUE)
