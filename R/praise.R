@@ -1,6 +1,6 @@
 # nocov start
 praise <- function() {
-  x <- bernie$point
+  x <- testthat::bernie$point
   return(x)
 }
 
@@ -22,7 +22,7 @@ praise_emoji <- function() {
 }
 
 encourage <- function() {
-  x <- bernie$chair
+  x <- testthat::bernie$chair
   return(x)
 }
 # nocov end
